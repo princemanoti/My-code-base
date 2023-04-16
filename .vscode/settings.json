@@ -1,0 +1,5 @@
+{
+    "gitdoc.enabled": true,
+    "java.import.gradle.offline.enabled": true,
+    "java.import.maven.offline.enabled": true
+}
