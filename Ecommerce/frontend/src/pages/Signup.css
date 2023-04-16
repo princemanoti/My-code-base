@@ -1,0 +1,30 @@
+.signup__image--container {
+    background-image: url(https://images.unsplash.com/photo-1634973357973-f2ed2657db3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8b25saW5lJTIwc2hvcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+    height: 90vh;
+    background-size: cover;
+}
+.signup__form--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.login__image--container {
+    background-image: url(https://media.istockphoto.com/id/1413562190/photo/lumber-industry.jpg?b=1&s=170667a&w=0&k=20&c=uycpd7isNV-9aqzrXig3P1WzlCnnQZOvZWbn3xbCI7U=);
+    height: 100vh;
+    background-size: cover;
+}
+.login__form--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+@media  screen and (max-widht:756px) {
+    .login__image--container,
+    .signup__image--container{
+        display: none;
+    }
+}
