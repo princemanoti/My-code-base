@@ -44,19 +44,20 @@ d.push(43241152);
 console.log(d)//[1, 2, 3, 4, 5, 43241152]
 console.log(c)
 
-//2.
+//2.Shallow cloning
 let obj = {a: 'a', b: 'b', c: 'c'};
 let clone = Object.assign({}, obj);
 let clone2 = {...obj};
-//new feature in Javascript used instead of line 47
+//new feature in Javascript used instead of line 50
 
 obj.c = 5;
+console.log(obj); //{a: 'a', b: 'b', c: 5}
 console.log(clone); //{a: 'a', b: 'b', c: 'c'}
 console.log(clone2); //{a: 'a', b: 'b', c: 'c'}
 //the object isn't affected it just changes c to 5 
 
 
-//3.SuperClone
+//3.Shallow Cloning 2
 let obj = {a: 'a',
  	b: 'b', 
  	c: {
@@ -64,12 +65,34 @@ let obj = {a: 'a',
  	}
  };
 let clone = Object.assign({}, obj);
-let clone2 = {...obj};
-let superClone = JSON.parse(JSON.stringify(obj));
-//new feature in Javascript used instead of line 47
+let clone2 = {...obj};////new feature in Javascript used instead of line 67
 
-obj.c = 5;
-console.log(clone); //{a: 'a', b: 'b', c: 'c'}
-console.log(clone2); //{a: 'a', b: 'b', c: 'c'}
-console.log(superClone);
-//the object isn't affected it just changes c to 5 
+//shallow cloning
+obj.c.deep = 'hahaha';
+
+console.log(obj);// {a: "a",b: "b",c: {deep: 'hahaha'}}
+console.log(clone); // {a: "a",b: "b",c: {deep: 'hahaha'}}
+console.log(clone2); //{a: "a",b: "b",c: {deep: 'hahaha'}}
+
+
+//the need for a deep clone.
+let obj = {a: 'a',
+    b: 'b', 
+    c: {
+        deep: "try and clone me"
+    }
+ };
+let clone = Object.assign({}, obj);
+let clone2 = {...obj};////new feature in Javascript used instead of line 87
+
+
+//deep cloning
+let superClone = JSON.parse(JSON.stringify(obj));
+
+obj.c.deep = 'hahaha';
+console.log(obj);//{a: "a",b: "b",c: {deep: 'hahaha'}}
+console.log(clone); //{a: "a",b: "b",c: {deep: 'hahaha'}}
+console.log(clone2); //{a: "a",b: "b",c: {deep: 'hahaha'}}
+console.log(superClone);//{a: "a",b: "b",c: {deep: 'try and clone me'}}
+// superClone clones the entire reference.
+//carefulness though is required when using deep cloning.

@@ -2,7 +2,7 @@ var button = document.getElementsByTagName('button')[0];
 
 
 //developer.mozilla.org
-button.addEventListener("mouseenter", function(){
+button.addEventListener("mouseEnter", function(){
 	console.log("Clicked meeeeeeee!");
 })
 
